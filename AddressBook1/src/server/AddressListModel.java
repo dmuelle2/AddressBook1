@@ -24,7 +24,7 @@ public class AddressListModel {
 //	public static List<EntryData> getEntryData() {
 	//	PersistenceManager pm = pmf.getPersistenceManager();
 		//Query query = pm.newQuery(EntryData.class);
-		//List<EntryData> entries = (List<EntryData>) query.execute();
+		//List<EntryData> entries = (List<EntryData>) query.execute();fff
 		// Child classes are loaded "lazily" - not until they are accessed.
 		// To make sure they are loaded before the PersistenceManager closes,
 		// we reference them here so they are forced to load.
