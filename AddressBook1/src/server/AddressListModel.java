@@ -9,12 +9,7 @@ package server;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.jdo.PersistenceManager;
-import javax.jdo.PersistenceManagerFactory;
-import javax.jdo.Query;
-
-import edu.gac.mcs270.hvidsten.guslistgae.shared.EntryData;
+import Shared.EntryData;
 
 public class AddressListModel {
 	static final PersistenceManagerFactory pmf = PMF.get();
@@ -36,14 +31,14 @@ public class AddressListModel {
 		//return new ArrayList<EntryData>(entries); BLOP BLOP blop
 	//}
   
-	public static void storeEntry(EntryData entry) {
+	public static void storeEntry(EntryData entries) {
 		PersistenceManager pm = pmf.getPersistenceManager();
 		// Transactions lock all records in a datastore and keep them locked 
 		//  until they are ready to commit their changes. This eliminates
 		//  possibility of conflict of access
 		try {
 			pm.currentTransaction().begin();
-			pm.makePersistent(entry);
+			pm.makePersistent(entries);
 			pm.currentTransaction().commit();
 		}
 		finally {
@@ -134,6 +129,15 @@ public class AddressListModel {
 	
 	public static EntryData getEditingEntry() {
 		return AddressListModel.editingEntry;
+	}
+
+	public static void storeAddress(EntryData entries) {
+		// TODO Auto-generated method stub
+	}
+
+	public static List<EntryData> getAddressData() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
