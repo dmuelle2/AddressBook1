@@ -10,6 +10,7 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 public class SubmitAddressServiceImpl extends 
            RemoteServiceServlet implements SubmitAddressService{
 
+	@Override
 	public String submitAddressToServer(EntryData entries) {
 		// TODO Auto-generated method stub
 		return null;

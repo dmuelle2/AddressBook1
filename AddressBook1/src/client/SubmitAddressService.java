@@ -7,5 +7,5 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
 @RemoteServiceRelativePath("submitpost") 
 public interface SubmitAddressService extends RemoteService {
-	public String submitPostToServer(EntryData entries);
+	public String submitAddressToServer(EntryData entries);
 }

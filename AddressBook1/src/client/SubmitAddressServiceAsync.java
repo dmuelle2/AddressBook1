@@ -6,6 +6,6 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 
 
 public interface SubmitAddressServiceAsync {
-	public void submitPostToServer(EntryData entries,
+	public void submitAddressToServer(EntryData entries,
 			AsyncCallback<String> asyncCallback);
 }

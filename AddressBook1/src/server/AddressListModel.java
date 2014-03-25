@@ -9,6 +9,11 @@ package server;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.jdo.PersistenceManager;
+import javax.jdo.PersistenceManagerFactory;
+import javax.jdo.Query;
+
 import Shared.EntryData;
 
 public class AddressListModel {

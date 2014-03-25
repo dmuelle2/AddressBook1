@@ -10,5 +10,5 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
  * The async counterpart of <code>GreetingService</code>.
  */
 public interface GetAddressDataServiceAsync {
-	public void getPostDataFromServer(AsyncCallback<List<EntryData>> asyncCallback);
+	public void getAddressDataFromServer(AsyncCallback<List<EntryData>> asyncCallback);
 }

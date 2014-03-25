@@ -2,6 +2,11 @@ package Shared;
 
 import java.io.Serializable;
 
+import javax.jdo.annotations.Extension;
+import javax.jdo.annotations.IdGeneratorStrategy;
+import javax.jdo.annotations.Persistent;
+import javax.jdo.annotations.PrimaryKey;
+
 @PersistenceCapable(identityType=IdentityType.APPLICATION)
 public class EntryData implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -31,6 +36,15 @@ public class EntryData implements Serializable {
 	private Buyer buyer=null;
 **/
 	// GWT serializable Objects need a no=argument constructor
+	
+	@PrimaryKey
+	// Need to define the key this way so that a Seller can be passed
+	// as data through RPC services.   
+	// See https://developers.google.com/appengine/docs/java/datastore/jdo/creatinggettinganddeletingdata#Keys
+	@Persistent(valueStrategy=IdGeneratorStrategy.IDENTITY)
+	@Extension(vendorName = "datanucleus", key = "gae.encoded-pk", value = "true")
+	private String id;
+	
 	public EntryData() {}
 
 	public EntryData(String n, String a, String c, String s, int z, String e, int p){
@@ -71,6 +85,11 @@ public class EntryData implements Serializable {
 	public String getPhone() {
 		return phone;
 	}
+	
+	public String getID() {
+		return id;
+	}
+	
 /*
 	public String toString() {
 		return "Post title = "+ title +

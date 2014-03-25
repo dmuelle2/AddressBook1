@@ -222,7 +222,6 @@ public class AddressListView {
 			zipTextbox.setName("zip");
 			emailTextbox.setName("email");
 			phoneTextbox.setName("phone");
-			upload.setName("upload");
 
 			// Upon clicking "Submit" control goes to Controller
 			addContactButton.addClickHandler(new ClickHandler() {
